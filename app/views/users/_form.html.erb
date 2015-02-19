@@ -1,0 +1,16 @@
+<%= form_for obj  do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br/>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br/>
+  <%= f.label :role %>
+  <%= f.text_field :role %>
+  <br/>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <br/>
+  <%= f.submit obj.new_record? ? 'Create User' : 'Update' %>
+<% end %>
+
