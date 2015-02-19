@@ -1,1 +1,17 @@
 <h4 class="lead">Register</h4>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br/>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br/>
+  <%= f.label :role %>
+  <%= f.text_field :role %>
+  <br/>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <br/>
+  <%= f.submit @user.new_record? ? 'Create User' : 'Update' %>
+<% end %>
