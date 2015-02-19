@@ -3,5 +3,5 @@ SmsAlertSystem::Application.routes.draw do
 
   get 'register', to: 'users#new', as: 'register'
 
-  resources :users, except: [:destroy, :index]
+  resources :users, except: [:new, :destroy, :index]
 end
