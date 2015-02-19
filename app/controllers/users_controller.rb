@@ -8,13 +8,13 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = 'You created a new user'
-      redirect_to :root_path
+      redirect_to root_path
     else
       render :new  
     end
   end
   
-  private'
+  private
 
   def user_params
     params.require(:user).permit(:username, :role, :phone_number, :password)
