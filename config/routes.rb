@@ -8,4 +8,5 @@ SmsAlertSystem::Application.routes.draw do
 
   resources :users, except: [:new, :destroy, :index]
   resources :tasks, except: [:show]
+  resources :phrases, except: [:show]
 end
