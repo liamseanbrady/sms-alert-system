@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def require_user
+    if !logged_in?
+      flash[:error] = "Sorry. You don't have permission to do that"
+      redirect_to register_path 
+    end
+  end
 end
