@@ -3,6 +3,7 @@ class PhrasesController < ApplicationController
 
   def new
     @phrase = Phrase.new
+    @phrases = Phrase.all
   end
 
   def create
@@ -15,5 +16,11 @@ class PhrasesController < ApplicationController
       flash[:error] = 'The phrase could not be created. Please try again.'
       render :new
     end
+  end
+
+  private
+
+  def phrase_params
+    params.require(:phrase).permit(:body)
   end
 end
