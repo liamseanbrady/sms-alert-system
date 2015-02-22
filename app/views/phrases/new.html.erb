@@ -1,3 +1,12 @@
 <%= render 'shared/header', title: 'Create a New Phrase' %>
 
 <%= render 'form' %>
+
+<br/>
+
+<h4>Current Phrases</h4>
+<ul>
+  <% @phrases.each do |phrase| %>
+    <li><%= phrase.body %></li>
+  <% end %>
+</ul>
