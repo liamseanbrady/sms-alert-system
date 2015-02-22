@@ -17,3 +17,6 @@
 
 # Ignore secret token
 /config/initializers/secret_token.rb
+
+# Ignore custom environment variables
+/config/environment_variables.rb
