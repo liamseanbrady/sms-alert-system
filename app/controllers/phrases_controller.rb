@@ -13,7 +13,6 @@ class PhrasesController < ApplicationController
       flash[:notice] = 'You created a new phrase'
       redirect_to user_path(current_user)
     else
-      flash[:error] = 'The phrase could not be created. Please try again.'
       render :new
     end
   end
