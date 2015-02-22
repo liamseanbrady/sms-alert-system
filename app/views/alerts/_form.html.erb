@@ -1,3 +1,10 @@
-<%= form_for @task do |f| %>
-  
+<%= form_tag '/alerts' do %>
+  <%= label_tag :phrase %>
+  <select name='phrase_id'>
+    <% @phrases.each do |phrase| %>
+      <option value=<%= phrase.id %>><%= phrase.body %></option>
+    <% end %>
+  </select>
+  <br/>
+  <%= submit_tag 'Send Alert' %>
 <% end %>
