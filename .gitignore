@@ -19,4 +19,4 @@
 /config/initializers/secret_token.rb
 
 # Ignore custom environment variables
-/config/environment_variables.rb
+/config/environment_variables.yml
