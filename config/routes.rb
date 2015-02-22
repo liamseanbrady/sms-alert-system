@@ -7,6 +7,7 @@ SmsAlertSystem::Application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users, except: [:new, :destroy, :index]
-  resources :tasks, except: [:show]
+  resources :tasks, only: [:show]
+  resources :alerts, only: [:new, :create]
   resources :phrases, except: [:show]
 end
