@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def branch?
     role == 'branch'
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
