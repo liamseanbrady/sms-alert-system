@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
       redirect_to register_path 
     end
   end
+
+  def require_admin
+    unless logged_in? && current_user.admin?
+      flash[:error] = "Sorry. You're not allowed to do that."
+      redirect_to root_path
+    end
+  end
 end
