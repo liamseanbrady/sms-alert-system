@@ -2,6 +2,9 @@
   <div class="container-fluid">
     <% if logged_in? %>
       Hi <%= current_user.username %>
+      <%= link_to 'Add Phrase', new_phrase_path %>
+      <%= link_to 'Send Alert', new_alert_path %>
+      <%= link_to 'View Alert History', alerts_path %>
       <%= link_to 'Logout', logout_path %>
     <% else %>
       <%= link_to 'Login', login_path %>
