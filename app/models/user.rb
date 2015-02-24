@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   def admin?
     role == 'admin'
   end
+
+  def uncompleted_tasks
+    tasks.where(completed_at: nil)
+  end
 end
