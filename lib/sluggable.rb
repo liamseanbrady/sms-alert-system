@@ -16,7 +16,7 @@ module Sluggable
       potential_slug = prepare_slug(self.send(self.class.slug_column.to_sym))
       obj = self.class.find_by(slug: potential_slug)
       unique_id_counter = 2
-      binding.pry
+    
       while obj && obj != self
         potential_slug = append_suffix(potential_slug, unique_id_counter)
         obj = self.class.find_by(slug: potential_slug)
