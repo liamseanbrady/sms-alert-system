@@ -20,5 +20,5 @@ class AlertsController < ApplicationController
     else
       render :new
     end
-  end
+  end 
 end
