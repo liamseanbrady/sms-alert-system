@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
+  include Sluggable
+
   has_secure_password validations: false
  
   has_many :tasks
   
   scope :branches, -> { where role: 'branch' }
+
+  sluggable_column :username
 
   validates :role, presence: true
   validates :username, presence: true, uniqueness: true
