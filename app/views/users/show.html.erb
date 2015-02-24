@@ -1,3 +1,13 @@
 <%= render 'shared/header', title: "#{current_user.username}" %>
 
- 
+<h4>Tasks to be Completed</h4>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.phrase %> - alerted at <%= task.created_at %></li>
+    <% if current_user.branch? %>
+      <%= link_to 'Mark as Completed', completed_task_path(task), method: 'post' %>
+    <% else %>
+      Assigned to <%= task.recipient.username %>
+    <% end %>
+  <% end %>
+</ul>
