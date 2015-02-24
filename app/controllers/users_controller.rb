@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = 'You created a new user'
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new  
@@ -18,6 +19,11 @@ class UsersController < ApplicationController
   end
   
   def show
+    if current_user.role == 'branch'
+      @tasks = current_user.uncompleted_tasks
+    else
+      @tasks = Task.all.where(completed_at: nil)
+    end
   end
 
   private
