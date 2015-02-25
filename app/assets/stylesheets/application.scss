@@ -9,5 +9,877 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$main-theme: #5cb85c;
+$blue: #8A6DA5;
+$grey: #B3B3B3;
+$dark-grey: #666;
+$x-dark-grey: #333;
+$x-light-grey: #F6F6F6;
+$success: #5cb85c;
+$danger: #E63048;
+
+.generic-subheading {
+color: $grey;
+}
+
+.alert {
+  margin-top: 30px;
+color: #FFF;
+border: none;
+        .close {
+color: #FFF;
+opacity: 1;
+         margin-top: -3px;
+a:hover, a:active {
+opacity: 0.7;
+         text-shadow: 0;
+  }
+        }
+}
+
+.alert-danger {
+  background-color: $danger;
+}
+
+.alert-success {
+  background-color: $success;
+}
+
+.badge {
+background: $grey;
+padding: 4px 10px;
+         a {
+color: #FFF;
+       &:link, &:visited {
+         text-decoration: none;
+       }
+       &:hover, &:active {
+         text-decoration: none;
+       }
+         }
+}
+
+.label-public {
+  background-color: $success;
+}
+
+.label-private {
+  background-color: $grey;
+}
+
+.new-goal {
+  font-size: 14px;
+width: 100%;
+}
+
+.label-hot {
+  background-color: $main-theme;
+}
+
+.glyphicon-pill {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.glyphicon-notification {
+  font-size: 18px;
+  padding-left: 2px;
+position: relative;
+top: 4px;
+color: lighten($main-theme, 28);
+}
+
+.glyphicon-disabled {
+cursor: pointer;
+}
+
+.glyphicon-md {
+  font-size: 18px;
+  margin-left: 4px;
+  margin-right: 8px;
+color: $grey;
+       &:hover, &:active {
+color: $main-theme;
+       }
+}
+
+.glyphicon-lg {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 40px;
+color: #DDD;
+}
+
+.glyphicon-about {
+  font-size: 40px;
+color: $main-theme;
+}
+
+.glyphicon-purple {
+color: $blue;
+}
+
+.glyphicon-main {
+color: $main-theme;
+}
+
+.glyphicon-success {
+color: $success;
+}
+
+.about-container {
+  margin-top: 0;
+  margin-bottom: 90px;
+  h2 {
+    font-size: 22px;
+color: $main-theme;
+  }
+}
+
+.about-box {
+  margin-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  p {
+    margin-top: 20px;
+  }
+}
+
+.footer {
+  text-align: center;
+color: $grey;
+       border-top: 2px solid $x-light-grey;
+       padding-top: 25px;
+       margin-bottom: 25px;
+}
+
+.navbar {
+background: $main-theme;
+            border-radius: 0;
+padding: 0;
+margin: 0;
+        margin-bottom: 0;
+border: 0;
+
+        .nav li {
+          a {
+            &:hover, &:active, &:visited {
+color: white;
+background: darken($main-theme, 3);
+            }
+            &:link {
+color: white;
+       font-weight: 500;
+       font-size: 14px;
+            }
+          }
+          &.current a {
+            &:link, &:active, &:visited {
+color: white;
+background: darken($main-theme, 3);
+            }
+          }
+        }
+
+        .navbar-nav > .open > a:focus {
+color: white;
+background: darken($main-theme, 5);
+        }
+
+        .dropdown .dropdown-menu {
+          li a {
+color: darken($dark-grey, 10);
+       font-weight: 400;
+       font-size: 14px;
+       &:link {
+color: $dark-grey;
+       }
+       &:hover, &:active {
+color: #FFF;
+background: $main-theme;
+       }
+       .glyphicon {
+         margin-right: 10px;
+         margin-left: -2px;
+       }
+          }
+        }
+
+        .navbar-brand {
+          &:link,, &:visited {
+color: #FFF;
+          }
+          &:hover, &:active {
+color: darken(#FFF, 5);
+          }
+        }
+
+        .navbar-header {
+          margin-top: 5px;
+          .icon-bar {
+            background-color: #FFF;
+          }
+
+          button {
+border: 1px solid #FFF;
+background: $main-theme;
+            &:visited, &:link {
+background: $main-theme;
+            }
+            &:hover, &:active {
+background: lighten($main-theme, 7)
+            }
+            .navbar-toggle {
+background: $main-theme;
+            }
+          }
+        }
+}
+
+.nav-pills {
+  margin-bottom: 20px;
+  a {
+background: #DDD;
+color: #AAA;
+       &:hover {
+background: #DEDEDE;
+color: #BBB;
+       }
+  }
+  li.active a {
+background: $main-theme;
+            &:hover {
+background: lighten($main-theme, 7);
+            }
+  }
+}
+
+.profile .nav-pills {
+  margin-bottom: 10px;
+  a {
+background: #DDD;
+color: #AAA;
+       &:hover {
+background: #DDD;
+color: #777;
+       }
+  }
+  li.active a {
+background: $main-theme;
+            &:hover {
+background: lighten($main-theme, 7);
+            }
+  }
+}
+
+.nav-tabs {
+  li a {
+border: none;
+color: $dark-grey;
+       &:visited {
+color: $grey;
+background: none;
+       }
+       &:hover, &:active {
+color: $main-theme;
+background: none;
+       }
+  }
+  li.active a {
+color: $main-theme;
+       &:visited {
+color: $main-theme;
+       }
+       &:active, &:hover {
+color: $main-theme;
+background: none;
+       }
+  }
+}
+
+.nav-search {
+  margin-top:13px;
+  margin-left: 10px;
+  margin-right: 10px;
+  input[type="text"] {
+    font-size: 15px;
+    border-bottom: 2px solid darken($x-light-grey, 3);
+    &:focus, &:active {
+color: $dark-grey;
+       background-color: $x-light-grey;
+       border-bottom: 2px solid $x-light-grey;
+outline: transparent;
+    }
+  }
+  .btn-default {
+background: $main-theme;
+border: 1px solid #FFF;
+        padding-top: 5px;
+        padding-bottom: 5px;
+color: #FFF;
+       &:link, &:visited {
+color: #FFF;
+       }
+       &:hover, &:active {
+background: lighten($main-theme, 5);
+       }
+  }
+}
+
+#search-button {
+  margin-top: 19px;
+  font-size: 19px;
+color: #FFF;
+       margin-right: 18px;
+       margin-left: 15px;
+cursor: pointer;
+}
+
+.well {
+background: #F6F6F6;
+            box-shadow: 0 0;
+border: 0;
+        border-radius: 0;
+height: 90%;
+}
+
+.panel-danger {
+color: $dark-grey;
+       font-size: 18px;
+border: 2px solid $main-theme;
+        .panel-heading {
+color: $main-theme;
+        }
+}
+
+.panel-default {
+border: 2px solid darken($x-light-grey, 2);
+}
+
+.panel-default h4 {
+  font-size: 17px;
+  font-weight: 500;
+color: $dark-grey;
+a:hover, a:active {
+color: $main-theme;
+  }
+}
+
+.goal-panel .panel-body {
+height: 268px;
+}
+
+.panel {
+  .panel-heading {
+    padding-top: 14px;
+    padding-bottom: 14px;
+background: #FFF;
+            border-bottom: 2px solid darken($x-light-grey, 2);
+            .category {
+a:link, a:visited {
+color: darken($grey, 3);
+  }
+            }
+  }
+
+  .goal-body {
+    p {
+      font-size: 16px;
+color: $dark-grey;
+       font-weight: 400;
+    }
+  }
+}
+
+.goal-grid {
+  .panel, .well {
+background: #FFF;
+            box-shadow: 0 0;
+border: 2px solid darken($x-light-grey, 8);
+        border-radius: 4px;
+  }
+}
+
+.resource-content {
+height: 180px;
+}
+
+.resource-summary {
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 600px;
+a:link, a:visited {
+color: $x-dark-grey;
+  }
+a:hover, a:active {
+color: $main-theme;
+  }
+}
+
+.like-footer {
+  padding-bottom: 14px;
+  .clear a {
+    &:link, &:visited {
+color: lighten($grey, 12);
+    }
+    &:hover, &:active {
+color: $main-theme;
+    }
+    margin-left: 5px;
+  }
+  .fill a {
+    &:link, &:visited {
+color: $main-theme;
+    }
+    &:hover, &:active {
+color: $main-theme;
+    }
+    margin-left: 5px;
+  }
+  .highlight {
+color: $main-theme;
+  }
+}
+
+.goal-body {
+height: 150px;
+}
+
+
+.global-header {
+color: #BBB;
+       font-weight: 100;
+       font-size: 2.8em;
+       padding-top: 35px;
+       margin-bottom: 20px;
+}
+
+.global-subtitle {
+color: $main-theme;
+       font-weight: 100;
+       font-size: 1em;
+       padding-top: 35px;
+       margin-bottom: 20px;
+}
+
+.list-group-item {
+color: $grey;
+       .badge {
+background: $x-light-grey;
+color: lighten($dark-grey, 8);
+       }
+}
+
+.list-group-item-link a {
+  &:link, &:visited {
+background: $x-light-grey;
+color: lighten($dark-grey, 8);
+  }
+  &:hover, &:active {
+color: $main-theme;
+  }
+}
+
+.list-group-item-padded {
+  padding-top: 25px;
+  padding-bottom: 25px;
+background: $x-light-grey;
+}
+
+.feedback-link {
+color: $grey;
+       padding-top: 30px;
+       font-size: 14px;
+}
+
+.form-control {
+  background: $x-light-grey;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.form-container form {
+  margin-bottom: 40px;
+}
+
+.important-center {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btn {
+border: none;
+        padding-top: 9px;
+        padding-bottom: 9px;
+}
+
+.btn-default {
+background: #DDD;
+color: #AAA;
+       font-weight: 500;
+border: none;
+        &:link, &:visited {
+background: #DDD;
+color: #AAA;
+        }
+        &:hover, &:active {
+background: #E1E1E1;
+color: #888;
+        }
+}
+
+.btn-pinch {
+background: $main-theme;
+color: #FFF;
+border: none;
+        &:hover, &:active {
+background: lighten($main-theme, 7);
+color: #FFF;
+        }
+}
+
+.btn-register {
+background: $success;
+color: #FFF;
+border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        &:link, &:visited {
+color: #FFF;
+        }
+        &:hover, &:active {
+background: lighten($success, 5);
+color: #FFF;
+        }
+        margin-top: 5px;
+        margin-bottom: 5px;
+}
+
+.btn-more {
+background: lighten($grey, 7);
+color: #888;
+border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        &:link, &:visited {
+color: #666;
+        }
+        &:hover, &:active {
+background: lighten($grey, 12);
+color: #888;
+        }
+        margin-top: 5px;
+        margin-bottom: 5px;
+}
+
+.btn-primary {
+background: $blue;
+color: #FFF;
+border: none;
+        &:link, &:visited {
+background: $blue;
+        }
+        &:hover, &:active {
+background: lighten($blue, 7);
+color: #FFF;
+        }
+}
+
+.btn-search {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  &:link, &:visited {
+color: #FFF;
+  }
+  &:hover, &:active, &:focus {
+color: #FFF;
+  }
+}
+
+nav button.btn-login {
+  a {
+border: none;
+background: none;
+color: #FFF;
+       box-shadow: 0 0;
+       &:link, &:visited {
+border: none;
+background: none;
+color: #FFF;
+       text-decoration: none;
+       box-shadow: 0 0;
+       }
+       &:hover, &:active, &:focus {
+border: none;
+background: none;
+color: #FFF;
+       text-decoration: none;
+       box-shadow: 0 0;
+       }
+  }
+  padding-top: 6px;
+  padding-bottom: 6px;
+border: 1px solid #FFF;
+background: $main-theme;
+color: #FFF;
+       &:link, &:visited {
+color: #FFF;
+background: $main-theme;
+       }
+       &:hover, &:active {
+color: #FFF;
+border: 1px solid #FFF;
+background: lighten($main-theme, 5);
+       }
+}
+
+.btn-success-disabled {
+  pointer-events: none;
+color: #FFF;
+background: darken($success, 10);
+}
+
+.notification-container {
+  margin-top: 30px;
+  .nav .active .badge {
+color: $main-theme;
+  }
+
+  .badge {
+color: #FFF;
+  }
+}
+
+.empty-message {
+  margin-top: 80px;
+color: $grey;
+       font-weight: 100;
+}
+
+.jumbotron {
+background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0)), url('http://7-themes.com/data_images/out/36/6894141-blurred.jpg') no-repeat right bottom;
+            background-size: 100% 100%;
+width: 100%;
+       margin-bottom: 70px;
+       padding-bottom: 6%;
+}
+
+h1.jumbotron-heading {
+  font-size: 55px;
+color: #FFF;
+       margin-top: 25px;
+       margin-bottom: 20px;
+       font-weight: 300;
+       text-align: left;
+}
+
+h4.jumbotron-subheading {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+color: $main-theme;
+}
+
+p.jumbotron-text {
+  font-size: 17px;
+color: darken(#FFF, 5);
+       padding-bottom: 20px;
+       font-weight: 300;
+}
+
+.img-logo-jumbotron {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+
+.creator-label {
+  text-align: center;
+  margin-top: 3px;
+}
+
+.img-center {
+  img {
+    text-align: center;
+margin: 0 auto;
+display: block;
+  }
+}
+
+.img-center-padded {
+  img {
+    text-align: center;
+margin: 0 auto;
+display: block;
+         margin-bottom: 40px;
+  }
+}
+
+.contributors, .resources {
+  margin-bottom: 30px;
+  h4 {
+    font-size: 14px;
+color: $grey;
+  }
+}
+
+p {
+  font-size: 16px;
+color: $dark-grey; 
+}
+
+a {
+color: $main-theme;
+       &:hover {
+color: #333;
+       text-decoration: none;
+       }
+}
+
+.color-hot {
+color: $dark-grey;
+       .glyphicon {
+color: $main-theme;
+       padding-top: 5px;
+       margin-left: 5px;
+       font-size: 16px;
+       }
+}
+
+.goal-title {
+a:link, a:visited {
+color: $x-dark-grey;
+  }
+a:hover, a:active {
+color: $dark-grey;
+  }
+}
+
+.info-glyph {
+  margin-left: 4px;
+  margin-top: -3px;
+  .glyphicon {
+color: $main-theme;
+  }
+}
+
+.goal-info {
+display: none;
+}
+
+#goal-buttons {
+display: none;
+}
+
+#goal-buttons-close {
+display: none;
+}
+
+#goal-buttons-open {
+  font-size: 16px;
+  margin-top: 22px;
+}
+
+#goal-buttons-close {
+  font-size: 14px;
+  margin-top: 12px;
+  margin-right: -3px;
+}
+
+table {
+  margin-top: 0;
+  padding-top: 0;
+  border-radius: 5px 5px 0 0;
+}
+
+.notification-panel {
+padding: 0px 15px;
+         margin-bottom: 20px;
+}
+
+.notification-text {
+  font-size: 18px;
+color: $dark-grey;
+}
+
+.notification-panel .table-responsive {
+  border-radius: 4px 4px 0 0;
+  white-space: normal;
+}
+
+.notification-panel .table-striped {
+  th {
+color: #FFF;
+background: $main-theme;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 0;
+            margin-top: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: none;
+  }
+  td {
+    padding-top: 10px;
+  }
+  .notification-buttons-unread {
+width: 18%;
+  }
+
+  .notification-buttons-read {
+width: 16%;
+  }
+}
+
+.nav-gravatar {
+display: inline;
+width: 30px;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: darken($main-theme, 5);
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: darken($main-theme, 5);
+}
+
+ul.nav.navbar-nav li {
+  a {
+height: 60px;
+        padding-top: 20px;
+  }
+}
+
+ul.nav.navbar-nav .dropdown-menu > li {
+  a {
+height: 40px;
+        padding-top: 10px;
+  }
+}
+
+ul.nav.navbar-nav li a.dropdown-toggle {
+  padding-top: 16px
+}
+
+.table-responsive > .table > thead > tr > th, .table-responsive > .table > thead > tr > td, 
+  .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tbody > tr > td, 
+  .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > tfoot > tr > td {
+    white-space: normal;
+  }
+
+
