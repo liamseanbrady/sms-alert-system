@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find_by(slug: params[:id]) 
+  end
+
   def show
     if current_user.role == 'branch'
       @tasks = current_user.uncompleted_tasks
