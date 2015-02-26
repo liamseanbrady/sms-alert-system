@@ -1,13 +1,30 @@
-<%= render 'shared/header', title: "#{current_user.username}" %>
+<%= render 'shared/header', title: "Tasks to be Completed" if current_user.branch? %>
+<%= render 'shared/header', title: "Tasks to be Completed by Sites" if current_user.admin? %>
 
-<h4>Tasks to be Completed</h4>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task.phrase %> - alerted at <%= task.created_at %></li>
-    <% if current_user.branch? %>
-      <%= link_to 'Mark as Completed', completed_task_path(task), method: 'post' %>
+
+<table class="table">
+  <tr>
+    <th>Task</th>
+    <th>Sent</th>
+    <% if current_user.admin? %>
+      <th>Site Name</th>
     <% else %>
-      Assigned to <%= task.recipient.username %>
+      <th class="col-md-3">Mark as Completed</th>
     <% end %>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.phrase %></td>
+      <td><%= friendly_datetime(task.created_at) %></td>
+      <% if current_user.admin? %>
+        <td><%= task.recipient.username %></td>
+      <% else %>
+        <td>
+          <%= link_to completed_task_path(task), method: 'post', class: 'btn btn-block btn-success' do %>
+            Completed <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
   <% end %>
-</ul>
+</table>
