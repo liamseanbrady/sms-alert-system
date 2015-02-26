@@ -1,13 +1,19 @@
 <%= render 'shared/header', title: 'Create a New Phrase' %>
 
-<%= render 'shared/errors', obj: @phrase %>
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-8 form-container">
+    <%= render 'shared/errors', obj: @phrase %>
+    <%= render 'form' %>
 
-<br/>
+    <br/>
+  </div>
 
-<h4>Current Phrases</h4>
-<ul>
-  <% @phrases.each do |phrase| %>
-    <li><%= phrase.body %></li>
-  <% end %>
-</ul>
+  <div class="col-md-4 well">
+    <h4>List of Current Phrases</h4>
+    <ul>
+      <% @phrases.each do |phrase| %>
+        <li><%= phrase.body %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
