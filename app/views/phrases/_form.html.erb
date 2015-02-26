@@ -1,6 +1,6 @@
-<%= form_for @phrase do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+<%= form_for @phrase, html: { role: 'form' }  do |f| %>
+  <%= f.label :body, class: 'sr-only' %>
+  <%= f.text_field :body, placeholder: 'Add a new phrase...', class: 'form-control' %>
   <br/>
-  <%= f.submit 'Create Phrase' %>
+  <%= f.submit 'Create Phrase', class: 'btn btn-block btn-success' %>
 <% end %>
