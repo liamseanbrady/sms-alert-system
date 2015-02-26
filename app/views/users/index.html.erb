@@ -1,0 +1,15 @@
+<%= render 'shared/header', title: 'All Contacts' %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Premises Name</th>
+    <th>Phone Number</th>
+  <tr>
+
+  <% @branches.each do |branch| %>
+    <tr>
+      <td><%= branch.username %></td>
+      <td><%= branch.phone_number %></td>
+    </tr>
+  <% end %>
+</table>
