@@ -1,7 +1,8 @@
 <% if !flash.keys.empty? %>
   <% flash.each do |key, msg| %>
     <div class='alert alert-<%= key == :notice ? 'success' : 'danger' %>' >
-      <%= msg %>
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= content_tag :div, msg, :id => "flash_#{key}" %>
     </div>
   <% end %>
 <% end %>
