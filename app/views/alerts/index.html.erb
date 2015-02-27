@@ -6,7 +6,7 @@
   <% @alerts.each do |alert| %>
     <tr>
       <td><%= alert.phrase %></td>
-      <td><%= alert.created_at %></td>
+      <td><%= friendly_datetime(alert.created_at) %></td>
     </tr>
   <% end %>
 </table>  
