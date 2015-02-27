@@ -14,4 +14,6 @@ SmsAlertSystem::Application.routes.draw do
   end
   resources :alerts, only: [:index, :new, :create]
   resources :phrases, except: [:show]
+
+  get '/records/:id', to: 'records#generate', as: 'generate_record'
 end
