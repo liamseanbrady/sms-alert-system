@@ -27,6 +27,17 @@ class UsersController < ApplicationController
     @user = User.find_by(slug: params[:id]) 
   end
 
+  def update
+    @user = User.find_by(slug: params[:id])
+
+    if @user.update(user_params)
+      flash[:notice] = 'You successfully update your details'
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
   def show
     if current_user.role == 'branch'
       @tasks = current_user.uncompleted_tasks
