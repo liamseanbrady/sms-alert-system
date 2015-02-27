@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   validates :role, presence: true
   validates :username, presence: true, uniqueness: true
-  validates :phone_number, presence: true, :if => :branch?
+  validates :phone_number, length: { is: 12 }, format: { with: /\A44*/, message: 'must start with 44' }, :if => :branch?
   validates :password, length: { minimum: 8 }, on: :create
 
   def branch?
