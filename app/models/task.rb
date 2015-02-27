@@ -5,10 +5,11 @@ class Task < ActiveRecord::Base
   validates :phrase, presence: true
   validates :recipient, presence: true
 
-  def self.to_csv
+  def self.to_csv(branch_id)
+    tasks = branch_id ? where(user_id: branch_id) : all
     CSV.generate do |csv|
-      csv << (column_names + ['branch_name'])
-      all.each do |task|
+      csv << (column_names + ['site_name'])
+      tasks.each do |task|
         csv << (task.attributes.values_at(*column_names) + [task.recipient.username]) 
       end
     end
