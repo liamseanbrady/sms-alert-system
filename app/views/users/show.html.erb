@@ -1,6 +1,9 @@
 <%= render 'shared/header', title: "Tasks to be Completed" if current_user.branch? %>
 <%= render 'shared/header', title: "Tasks to be Completed by Sites" if current_user.admin? %>
 
+<%= link_to 'Download records', generate_record_path(params.merge(id: generate_filename, format: 'csv')) %>
+<br/>
+<br/>
 
 <table class="table">
   <tr>
